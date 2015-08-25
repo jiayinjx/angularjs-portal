@@ -1,13 +1,19 @@
-<div class="list-content" id="portlet-id-{{::portlet.nodeId}}">
+<div ng-app="app_positionFix" class="list-content" id="portlet-id-{{::portlet.nodeId}}">
   <div class='widget-info'>
-    <i title="Info" class="fa fa-info-circle"
+    <i tabindex="0" title="Info" class="fa fa-info-circle"
     tooltip="{{::portlet.description}}"
     tooltip-trigger="mouseenter"
     tooltip-placement="top"
+    tooltip-append-to-body="true"
     tooltip-popup-delay="200"></i>
+    <!-- <script src="//ajax.googleapisfasddf.com/ajax/libs/angularjs/1.2.10/angular.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script> -->
+    <script>
+        var app_positionFix = angular.module('app_positionFix', ['ui.bootstrap'])
+    </script>
   </div>
-  <div class='widget-remove'>
-    <i title="Remove" class="fa fa-times portlet-options" ng-click="layoutCtrl.removePortlet(portlet.nodeId, portlet.title)"><a aria-label="Remove this app symbol" href="#"></a></i>
+  <div tabindex="0" aria-label="Remove this app symbol" class='widget-remove'>
+    <i title="Remove" class="fa fa-times portlet-options" ng-click="layoutCtrl.removePortlet(portlet.nodeId, portlet.title)"><p tabindex = "0"></p></i>
   </div>
   <a aria-labelledby="appTitle_portlet.title-{{::portlet.nodeId}}" tabindex="0" ng-if="'EXCLUSIVE' === layoutCtrl.portletType(portlet)" href="exclusive/{{::portlet.fname}}" target="{{::portlet.target}}">
     <div class="icon-container">
